@@ -1,5 +1,5 @@
-#ifndef BASELOGGER_HPP
-#define BASELOGGER_HPP
+#ifndef TEMPLATELOGGER_HPP
+#define TEMPLATELOGGER_HPP
 
 #include <iostream>
 #include "Singleton/Singleton.hpp"
@@ -18,4 +18,4 @@ class TemplateLogger : public Singleton<TemplateLogger<T>>, protected BaseLogger
         T* logStream;
 };
 
-#endif // BASELOGGER_HPP
+#endif // TEMPLATELOGGER_HPP

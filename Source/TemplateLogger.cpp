@@ -1,13 +1,13 @@
 #include "TemplateLogger.hpp"
 
 template<class T>
-TemplateLogger<T>::TemplateLogger() : logStream=nullptr
+TemplateLogger<T>::TemplateLogger() : logStream(nullptr)
 {
     //ctor
 }
 
 template<class T>
-TemplateLogger<T>::TemplateLogger(T* newLogStream) : logStream=newLogStream
+TemplateLogger<T>::TemplateLogger(T* newLogStream) : logStream(newLogStream)
 {
 
 }

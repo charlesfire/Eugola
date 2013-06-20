@@ -54,15 +54,6 @@
 		<Linker>
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML-2.0/lib" />
 		</Linker>
-		<Unit filename="BaseLogger.cpp" />
-		<Unit filename="BaseLogger.hpp" />
-		<Unit filename="Source/LoggerManager.cpp" />
-		<Unit filename="Source/LoggerManager.hpp" />
-		<Unit filename="Source/Singleton/Singleton.hpp" />
-		<Unit filename="Source/TemplateLogger.cpp" />
-		<Unit filename="Source/TemplateLogger.hpp" />
-		<Unit filename="Source/Util.cpp" />
-		<Unit filename="Source/Util.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
