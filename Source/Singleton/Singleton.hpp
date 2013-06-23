@@ -25,7 +25,7 @@ class Singleton
         }
         virtual ~Singleton()
         {
-
+            kill();
         }
     private:
         static T* m_singleton;

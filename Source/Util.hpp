@@ -1,9 +1,9 @@
-#ifndef UTIL_HPP_INCLUDED
-#define UTIL_HPP_INCLUDED
+#ifndef UTIL_HPP
+#define UTIL_HPP
 
 #include <ctime>
 #include <SFML/System/String.hpp>
 
 sf::String getStringDate();
 
-#endif // UTIL_HPP_INCLUDED
+#endif // UTIL_HPP
