@@ -1,4 +1,4 @@
-Unamed
+Eugola
 ======
 
-Censored.
+Eugola is a 2d sandbox game.
