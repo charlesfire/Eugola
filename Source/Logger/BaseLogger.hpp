@@ -2,6 +2,7 @@
 #define BASELOGGER_HPP
 
 #include <SFML/System/String.hpp>
+#include "../Utils/Date.hpp"
 
 enum ErrorLevel : sf::Uint8 {NO_ERROR, WARNING, FATAL_ERROR};
 
@@ -9,8 +10,10 @@ class BaseLogger
 {
     protected:
         BaseLogger();
-        virtual void write(sf::String& message, ErrorLevel errorLevel=FATAL_ERROR)=0;
+        void setMinimumErrorLevel(ErrorLevel newMinimumErrorLevel);
+        virtual bool write(const sf::String& message, ErrorLevel errorLevel=FATAL_ERROR)=0;
         virtual ~BaseLogger();
+        ErrorLevel m_minimumErrorLevel;
 };
 
 #endif // BASELOGGER_HPP

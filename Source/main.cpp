@@ -1,10 +1,12 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 #include <iostream>
-#include "Source/LoggerManager.hpp"
+#include "Logger/LoggerManager.hpp"
+#include "Logger/ConsoleLogger.hpp"
+#include "Logger/NetworkLogger.hpp"
 
 int main()
 {
-    TemplateLogger<std::ostream> consoleLogger;
     sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
@@ -17,7 +19,6 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
         window.clear();
         window.draw(shape);
         window.display();
