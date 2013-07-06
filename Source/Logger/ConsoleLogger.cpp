@@ -10,10 +10,8 @@ ConsoleLogger::~ConsoleLogger()
     //dtor
 }
 
-bool ConsoleLogger::write(const sf::String& message, ErrorLevel errorLevel)
+void ConsoleLogger::write(const std::string& message, ErrorLevel errorLevel)
 {
     if(errorLevel>=m_minimumErrorLevel)
-    {
-        std::cerr<<errorLevel<<": "<<getStringDate().toAnsiString()<<"\tError: "<<message.toAnsiString()<<std::endl;
-    }
+        std::cerr<<message<<std::endl;
 }

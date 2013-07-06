@@ -2,8 +2,8 @@
 #define DATE_HPP
 
 #include <ctime>
-#include <SFML/System/String.hpp>
+#include <string>
 
-sf::String getStringDate();
+std::string getStringDate();
 
 #endif // DATE_HPP

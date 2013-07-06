@@ -8,14 +8,11 @@
 class ConsoleLogger : public BaseLogger, public Singleton<ConsoleLogger>
 {
     public:
-        ConsoleLogger();
-        virtual bool write(const sf::String& message, ErrorLevel errorLevel=FATAL_ERROR);
+        friend Singleton<ConsoleLogger>;
         virtual ~ConsoleLogger();
-        ConsoleLogger& operator<<(const sf::String& message)
-        {
-            write(message);
-            return *this;
-        }
+    private:
+        ConsoleLogger();
+        virtual void write(const std::string& message, ErrorLevel errorLevel=FATAL_ERROR);
 };
 
 #endif // CONSOLELOGGER_HPP

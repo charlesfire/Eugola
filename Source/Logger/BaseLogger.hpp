@@ -2,16 +2,19 @@
 #define BASELOGGER_HPP
 
 #include <SFML/System/String.hpp>
-#include "../Utils/Date.hpp"
 
-enum ErrorLevel : sf::Uint8 {NO_ERROR, WARNING, FATAL_ERROR};
+enum ErrorLevel : sf::Uint8 {NO_ERROR, WARNING, FATAL_ERROR, ULTIMATE_ERROR}; //never use ULTIMATE_ERROR
+
+class LoggerManager;
 
 class BaseLogger
 {
+    public:
+        friend class LoggerManager;
     protected:
         BaseLogger();
         void setMinimumErrorLevel(ErrorLevel newMinimumErrorLevel);
-        virtual bool write(const sf::String& message, ErrorLevel errorLevel=FATAL_ERROR)=0;
+        virtual void write(const std::string& message, ErrorLevel errorLevel=FATAL_ERROR)=0;
         virtual ~BaseLogger();
         ErrorLevel m_minimumErrorLevel;
 };

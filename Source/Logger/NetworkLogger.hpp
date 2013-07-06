@@ -8,15 +8,11 @@ class NetworkLogger : public BaseLogger
 {
     public:
         NetworkLogger();
+        NetworkLogger(sf::Packet& newPacket);
         void setPacket(sf::Packet& newPacket);
-        virtual bool write(const sf::String& message, ErrorLevel errorLevel=FATAL_ERROR);
         virtual ~NetworkLogger();
-        NetworkLogger& operator<<(const sf::String& message)
-        {
-            write(message);
-            return *this;
-        }
     private:
+        virtual void write(const std::string& message, ErrorLevel errorLevel=FATAL_ERROR);
         sf::Packet* m_packet;
 };
 
