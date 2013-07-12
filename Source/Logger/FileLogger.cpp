@@ -7,7 +7,7 @@ FileLogger::FileLogger() : m_logStream()
 
 FileLogger::FileLogger(const std::string& logFilePath) : m_logStream()
 {
-    m_logStream.open(logFilePath, std::ios::ate);
+    m_logStream.open(logFilePath, std::ios::out|std::ios::app);
 }
 
 FileLogger::~FileLogger()
@@ -18,7 +18,7 @@ FileLogger::~FileLogger()
 void FileLogger::setLogFile(const std::string& logFilePath)
 {
     m_logStream.close();
-    m_logStream.open(logFilePath, std::ios::ate);
+    m_logStream.open(logFilePath, std::ios::out|std::ios::app);
 }
 
 void FileLogger::write(const std::string& message, ErrorLevel errorLevel)

@@ -11,11 +11,11 @@ class BaseLogger
 {
     public:
         friend class LoggerManager;
+        virtual ~BaseLogger();
     protected:
         BaseLogger();
         void setMinimumErrorLevel(ErrorLevel newMinimumErrorLevel);
         virtual void write(const std::string& message, ErrorLevel errorLevel=FATAL_ERROR)=0;
-        virtual ~BaseLogger();
         ErrorLevel m_minimumErrorLevel;
 };
 

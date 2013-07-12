@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "BaseLogger.hpp"
-#include "../Singleton/Singleton.hpp"
+#include "../Utils/Singleton.hpp"
 
 class ConsoleLogger : public BaseLogger, public Singleton<ConsoleLogger>
 {

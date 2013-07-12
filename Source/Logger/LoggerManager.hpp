@@ -3,7 +3,8 @@
 
 #include <vector>
 #include <SFML/System/String.hpp>
-#include "../Singleton/Singleton.hpp"
+#include <memory>
+#include "../Utils/Singleton.hpp"
 #include "BaseLogger.hpp"
 #include "../Utils/Date.hpp"
 
@@ -11,7 +12,7 @@ class LoggerManager : public Singleton<LoggerManager>
 {
     public:
         friend Singleton<LoggerManager>;
-        void addLogger(BaseLogger& logger);
+        void addLogger(BaseLogger* logger);
         void write(const std::string& message, ErrorLevel errorLevel=FATAL_ERROR)const;
         virtual ~LoggerManager();
         LoggerManager& operator<<(const std::string& message)
@@ -20,7 +21,7 @@ class LoggerManager : public Singleton<LoggerManager>
         }
     private:
         LoggerManager();
-        std::vector<BaseLogger*> m_loggerList;
+        std::vector<std::shared_ptr<BaseLogger>> m_loggerList;
 };
 
 #endif // LOGGERMANAGER_HPP
