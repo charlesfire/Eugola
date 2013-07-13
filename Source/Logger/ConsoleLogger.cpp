@@ -1,16 +1,16 @@
 #include "ConsoleLogger.hpp"
 
-ConsoleLogger::ConsoleLogger()
+Eu::ConsoleLogger::ConsoleLogger()
 {
     //ctor
 }
 
-ConsoleLogger::~ConsoleLogger()
+Eu::ConsoleLogger::~ConsoleLogger()
 {
     //dtor
 }
 
-void ConsoleLogger::write(const std::string& message, ErrorLevel errorLevel)
+void Eu::ConsoleLogger::write(const std::string& message, ErrorLevel errorLevel)
 {
     if(errorLevel>=m_minimumErrorLevel)
         std::cerr<<message<<std::endl;

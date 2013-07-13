@@ -4,6 +4,9 @@
 #include <ctime>
 #include <string>
 
-std::string getStringDate();
+namespace Eu
+{
+    std::string getStringDate();
+}
 
 #endif // DATE_HPP

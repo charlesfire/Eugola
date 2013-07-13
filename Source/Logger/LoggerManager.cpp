@@ -1,21 +1,21 @@
 #include "LoggerManager.hpp"
 
-LoggerManager::LoggerManager()
+Eu::LoggerManager::LoggerManager()
 {
     //ctor
 }
 
-LoggerManager::~LoggerManager()
+Eu::LoggerManager::~LoggerManager()
 {
     //dtor
 }
 
-void LoggerManager::addLogger(BaseLogger* logger)
+void Eu::LoggerManager::addLogger(BaseLogger* logger)
 {
     m_loggerList.push_back(std::shared_ptr<BaseLogger>(logger));
 }
 
-void LoggerManager::write(const std::string& message, ErrorLevel errorLevel)const
+void Eu::LoggerManager::write(const std::string& message, ErrorLevel errorLevel)const
 {
     const std::string tempErrorMessage(getStringDate()+"--->"+"Error:"+message+"\n");
     for(unsigned i(0); i<m_loggerList.size(); i++)

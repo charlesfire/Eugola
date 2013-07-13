@@ -8,20 +8,23 @@
 #include "BaseLogger.hpp"
 #include "../Utils/Date.hpp"
 
-class LoggerManager : public Singleton<LoggerManager>
+namespace Eu
 {
-    public:
-        friend Singleton<LoggerManager>;
-        void addLogger(BaseLogger* logger);
-        void write(const std::string& message, ErrorLevel errorLevel=FATAL_ERROR)const;
-        virtual ~LoggerManager();
-        LoggerManager& operator<<(const std::string& message)
-        {
-            write(message);
-        }
-    private:
-        LoggerManager();
-        std::vector<std::shared_ptr<BaseLogger>> m_loggerList;
-};
+    class LoggerManager : public Singleton<LoggerManager>
+    {
+        public:
+            friend Singleton<LoggerManager>;
+            void addLogger(BaseLogger* logger);
+            void write(const std::string& message, ErrorLevel errorLevel=FATAL_ERROR)const;
+            virtual ~LoggerManager();
+            LoggerManager& operator<<(const std::string& message)
+            {
+                write(message);
+            }
+        private:
+            LoggerManager();
+            std::vector<std::shared_ptr<BaseLogger>> m_loggerList;
+    };
+}
 
 #endif // LOGGERMANAGER_HPP

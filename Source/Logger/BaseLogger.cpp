@@ -1,16 +1,16 @@
 #include "BaseLogger.hpp"
 
-BaseLogger::BaseLogger() : m_minimumErrorLevel(FATAL_ERROR)
+Eu::BaseLogger::BaseLogger() : m_minimumErrorLevel(FATAL_ERROR)
 {
     //ctor
 }
 
-BaseLogger::~BaseLogger()
+Eu::BaseLogger::~BaseLogger()
 {
     //dtor
 }
 
-void BaseLogger::setMinimumErrorLevel(ErrorLevel newMinimumErrorLevel)
+void Eu::BaseLogger::setMinimumErrorLevel(ErrorLevel newMinimumErrorLevel)
 {
     m_minimumErrorLevel=newMinimumErrorLevel;
 }
